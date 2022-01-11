@@ -1,0 +1,90 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(110, 110, 110);
+}
+h1 {
+  text-align: center;
+  font-size: 2.2em;
+}
+
+.grid-container {
+  height: 40rem;
+  padding: 7px;
+  border: 5px solid rgb(145, 142, 142);
+  display: grid;
+  grid-gap: 10px;
+  /* justify-items: stretch; */
+
+  /* we can write multiple columns in one line using repeat property.AGAIN before writing repeat we can set  e column of any width and also after repeat we can do the same */
+  /* grid-template-columns: 350px repeat(2, 1fr) 300px; */
+
+  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-rows: repeat(3, 1fr); /* utilizing 3rows with same fraction; */
+
+  /* grid-auto-rows: minmax(150px, auto); */
+}
+
+.grid-item:nth-of-type(odd) {
+  background-color: lavender;
+}
+.grid-item:nth-of-type(even) {
+  background-color: lavenderblush;
+}
+.grid-item {
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#item-1 {
+  grid-column: 1/2;
+  grid-row: 1/4;
+}
+
+#item-5 {
+  grid-column: 7/6;
+  grid-row: 1/4;
+}
+
+#item-7 {
+  grid-column: 2/6;
+}
+
+#item-10 {
+  grid-column: 4/6;
+}
+
+.template-area-side {
+  background-color: hotpink;
+  height: 500px;
+  border: rgb(8, 8, 8) 5px solid;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px;
+  /* grid-template-areas:
+    "header header header"
+    "sidebar contents nav"
+    "sidebar contents nav"; */
+}
+
+#item-11 {
+  /* grid-area: header; */
+  grid-column: 1 / span 3;
+}
+
+#item-12 {
+  /* grid-area: sidebar; */
+  grid-row: 2/4;
+}
+#item-13 {
+  /* grid-area: contents; */
+  grid-column: 2/3;
+  grid-row: 2/4;
+}
+#item-14 {
+  /* grid-area: nav; */
+  grid-row: 2/3;
+}
